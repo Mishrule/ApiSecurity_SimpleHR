@@ -11,7 +11,8 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.Context
 {
-	public class ApplicationDbContext : IdentityDbContext<ApplicationUser, ApplicationRole, string, IdentityUserClaim<string>, IdentityUserRole<string>, IdentityUserLogin<string>, ApplicationRoleClaim, IdentityUserToken<string>>
+	public class ApplicationDbContext : IdentityDbContext<ApplicationUser, ApplicationRole, string, 
+		IdentityUserClaim<string>, IdentityUserRole<string>, IdentityUserLogin<string>, ApplicationRoleClaim, IdentityUserToken<string>>
 	{
 		public ApplicationDbContext(DbContextOptions options):base(options)
 		{
