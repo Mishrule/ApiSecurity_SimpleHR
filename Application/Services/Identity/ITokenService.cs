@@ -5,12 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using Common.Requests;
 using Common.Responses;
+using Common.Responses.Wrappers;
 
 namespace Application.Services.Identity
 {
     public interface ITokenService
 	{
-		Task<TokenResponse> GetTokenAsync(TokenRequest request);
-		Task<TokenResponse> GetRefreshTokenAsync(RefreshTokenRequest request);
+		Task<ResponseWrapper<TokenResponse>> GetTokenAsync(TokenRequest request);
+		Task<ResponseWrapper<TokenResponse>> GetRefreshTokenAsync(RefreshTokenRequest request);
 	}
 }
