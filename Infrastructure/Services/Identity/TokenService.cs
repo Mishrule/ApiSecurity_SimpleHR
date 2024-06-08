@@ -21,10 +21,11 @@ namespace Infrastructure.Services.Identity
 	public class TokenService : ITokenService
 	{
 		private readonly UserManager<ApplicationUser> _userManager;
-		private readonly RoleManager<ApplicationUser> _roleManager;
+		private readonly RoleManager<ApplicationRole> _roleManager;
 		private readonly AppConfiguration _appConfiguration;
 
-		public TokenService(UserManager<ApplicationUser> userManager, RoleManager<ApplicationUser> roleManager, IOptions<AppConfiguration> appConfiguration)
+		public TokenService(UserManager<ApplicationUser> userManager, RoleManager<ApplicationRole> roleManager,
+			IOptions<AppConfiguration> appConfiguration)
 		{
 			_userManager = userManager;
 			_roleManager = roleManager;

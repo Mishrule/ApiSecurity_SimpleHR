@@ -9,9 +9,9 @@ using Common.Responses.Wrappers;
 
 namespace Application.Services.Identity
 {
-    public interface ITokenService
+	public interface ITokenService
 	{
-		Task<ResponseWrapper<TokenResponse>> GetTokenAsync(TokenRequest request);
-		Task<ResponseWrapper<TokenResponse>> GetRefreshTokenAsync(RefreshTokenRequest request);
+		Task<ResponseWrapper<TokenResponse>> GetTokenAsync(TokenRequest tokenRequest);
+		Task<ResponseWrapper<TokenResponse>> GetRefreshTokenAsync(RefreshTokenRequest refreshTokenRequest);
 	}
 }
