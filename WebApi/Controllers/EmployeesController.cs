@@ -1,8 +1,10 @@
 ﻿using Application.Features.Employees.Commands;
 using Application.Features.Employees.Queries;
+using Common.Authorization;
 using Common.Requests.Employees;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using WebApi.Attributes;
 
 namespace WebApi.Controllers
 {
@@ -10,6 +12,7 @@ namespace WebApi.Controllers
     public class EmployeesController : AppBaseController<EmployeesController>
     {
         [HttpPost]
+        [MustHavePermission(AppFeature.Employees, AppAction.Create)]
         public async Task<IActionResult> CreateEmployee([FromBody] CreateEmployeeRequest employee)
         {
             var response = await MediatorSender.Send(new CreateEmployeeCommand { CreateEmployeeRequest = employee });
@@ -21,6 +24,8 @@ namespace WebApi.Controllers
         }
 
         [HttpPut]
+        [MustHavePermission(AppFeature.Employees, AppAction.Update)]
+
         public async Task<IActionResult> UpdateEmployee([FromBody] UpdateEmployeeRequest employee)
         {
             var response = await MediatorSender.Send(new UpdateEmployeeCommand { UpdateEmployeeRequest = employee });
@@ -32,6 +37,8 @@ namespace WebApi.Controllers
         }
 
         [HttpDelete("{employeeId}")]
+        [MustHavePermission(AppFeature.Employees, AppAction.Delete)]
+
         public async Task<IActionResult> DeleteEmployee(int employeeId)
         {
             var response = await MediatorSender.Send(new DeleteEmployeeCommand { EmployeeId = employeeId });
@@ -43,6 +50,8 @@ namespace WebApi.Controllers
         }
 
         [HttpGet]
+        [MustHavePermission(AppFeature.Employees, AppAction.Read)]
+
         public async Task<IActionResult> GetEmployeeList()
         {
             var response = await MediatorSender.Send(new GetEmployeesQuery());
@@ -54,6 +63,8 @@ namespace WebApi.Controllers
         }
 
         [HttpGet("{employeeId}")]
+        [MustHavePermission(AppFeature.Employees, AppAction.Read)]
+
         public async Task<IActionResult> GetEmployeeById(int employeeId)
         {
             var response = await MediatorSender.Send(new GetEmployeeByIdQuery(employeeId));

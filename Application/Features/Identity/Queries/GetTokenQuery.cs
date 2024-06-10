@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Application.Services.Identity;
-using Common.Requests;
+using Common.Requests.Identity;
 using Common.Responses.Wrappers;
 using MediatR;
 

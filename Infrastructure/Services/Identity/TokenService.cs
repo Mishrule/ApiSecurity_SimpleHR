@@ -8,17 +8,17 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using Application.AppConfigs;
-using Common.Requests;
 using Common.Responses;
 using Common.Responses.Wrappers;
 using Infrastructure.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
+using Common.Requests.Identity;
 
 namespace Infrastructure.Services.Identity
 {
-	public class TokenService : ITokenService
+    public class TokenService : ITokenService
 	{
 		private readonly UserManager<ApplicationUser> _userManager;
 		private readonly RoleManager<ApplicationRole> _roleManager;
