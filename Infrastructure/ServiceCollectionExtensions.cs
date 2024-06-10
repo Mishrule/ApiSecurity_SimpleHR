@@ -1,7 +1,9 @@
 ﻿
 
+using Application.Services;
 using Application.Services.Identity;
 using Infrastructure.Context;
+using Infrastructure.Services;
 using Infrastructure.Services.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -28,6 +30,14 @@ namespace Infrastructure
         {
             services
                 .AddTransient<ITokenService, TokenService>();
+
+            return services;
+        }
+
+        public static IServiceCollection AddServices(this IServiceCollection services)
+        {
+            services
+                .AddTransient<IEmployeeService, EmployeeService>();
 
             return services;
         }

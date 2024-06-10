@@ -13,6 +13,7 @@ namespace Application
 
 			return services
 					.AddMediatR(assembly)
+					.AddAutoMapper(assembly)
 				;
 		}
     }

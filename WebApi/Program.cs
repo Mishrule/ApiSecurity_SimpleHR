@@ -12,6 +12,7 @@ builder.Services.AddIdentitySettings();
 builder.Services.AddApplicationService();
 builder.Services.AddJwtAuthentication(builder.Services.GetApplicationSettings(builder.Configuration));
 builder.Services.AddIdentityServices();
+builder.Services.AddServices();
 
 
 builder.Services.RegisterSwagger();
