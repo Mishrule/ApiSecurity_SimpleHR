@@ -16,5 +16,7 @@ namespace Application.Services.Identity
 		Task<IResponseWrapper> UpdateUserAsync(UpdateUserRequest request);
 		Task<IResponseWrapper> ChangeUserPasswordAsync(ChangePasswordRequest request);
 		Task<IResponseWrapper> ChangeUserStatusAsync(ChangeUserStatusRequest request);
+		Task<IResponseWrapper> GetRoleAsync(string userId);
+		Task<IResponseWrapper> UpdateUserRoleAsync(UpdateUserRolesRequest request);
 	}
 }

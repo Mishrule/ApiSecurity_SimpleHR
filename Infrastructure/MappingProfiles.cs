@@ -14,6 +14,7 @@ namespace Infrastructure
 	    public MappingProfiles()
 	    {
 		    CreateMap<ApplicationUser, UserResponse>().ReverseMap();
-	    }
+		    CreateMap<ApplicationRole, RoleResponse>().ReverseMap();
+		}
     }
 }

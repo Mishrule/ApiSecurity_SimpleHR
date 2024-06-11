@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using Common.Requests.Employees;
 using Common.Responses;
+using Common.Responses.Identity;
 using Domain;
 
 namespace Application
@@ -16,6 +17,7 @@ namespace Application
 		{
 			CreateMap<CreateEmployeeRequest, Employee>().ReverseMap();
 			CreateMap<Employee, EmployeesResponse>().ReverseMap();
+			
 		}
 	}
 }

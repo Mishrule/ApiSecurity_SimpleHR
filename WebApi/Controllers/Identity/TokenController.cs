@@ -1,7 +1,6 @@
-﻿using Application.Features.Identity.Queries;
+﻿using Application.Features.Identity.Tokens.Queries;
 using Common.Requests.Identity;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebApi.Controllers.Identity
