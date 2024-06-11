@@ -15,6 +15,7 @@ namespace Infrastructure
 	    {
 		    CreateMap<ApplicationUser, UserResponse>().ReverseMap();
 		    CreateMap<ApplicationRole, RoleResponse>().ReverseMap();
+		    CreateMap<ApplicationRoleClaim, RoleClaimViewModel>().ReverseMap();
 		}
     }
 }
