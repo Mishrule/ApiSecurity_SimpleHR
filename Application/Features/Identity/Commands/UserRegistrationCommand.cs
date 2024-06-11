@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Application.Services.Identity;
 using Common.Requests.Identity;
 using Common.Responses.Wrappers;
 using MediatR;
@@ -16,9 +17,16 @@ namespace Application.Features.Identity.Commands
 
     public class UserRegistrationCommandHandler : IRequestHandler<UserRegistrationCommand, IResponseWrapper>
 	{
-		public Task<IResponseWrapper> Handle(UserRegistrationCommand request, CancellationToken cancellationToken)
+		private readonly IUserService _userService;
+
+		public UserRegistrationCommandHandler(IUserService userService)
 		{
-			throw new NotImplementedException();
+			_userService = userService;
+		}
+
+		public async Task<IResponseWrapper> Handle(UserRegistrationCommand request, CancellationToken cancellationToken)
+		{
+			return await _userService.RegisterUser(request.UserRegistration);
 		}
 	}
 }

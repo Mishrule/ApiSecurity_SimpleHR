@@ -11,5 +11,10 @@ namespace Application.Services.Identity
 	public interface IUserService
 	{
 		Task<IResponseWrapper> RegisterUser (UserRegistrationRequest userRegistrationRequest);
+		Task<IResponseWrapper> GetUserById(string userId);
+		Task<IResponseWrapper> GetAllUsersAsync();
+		Task<IResponseWrapper> UpdateUserAsync(UpdateUserRequest request);
+		Task<IResponseWrapper> ChangeUserPasswordAsync(ChangePasswordRequest request);
+		Task<IResponseWrapper> ChangeUserStatusAsync(ChangeUserStatusRequest request);
 	}
 }

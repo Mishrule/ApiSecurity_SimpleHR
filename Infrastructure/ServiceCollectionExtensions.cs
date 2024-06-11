@@ -1,5 +1,6 @@
 ﻿
 
+using System.Reflection;
 using Application.Services;
 using Application.Services.Identity;
 using Infrastructure.Context;
@@ -43,5 +44,9 @@ namespace Infrastructure
             return services;
         }
 
+        public static void AddInfrastrustureDependencies(this IServiceCollection services)
+        {
+            services.AddAutoMapper(Assembly.GetExecutingAssembly());
+        }
     }
 }
