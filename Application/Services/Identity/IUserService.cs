@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Common.Requests.Identity;
+using Common.Responses.Identity;
 using Common.Responses.Wrappers;
 
 namespace Application.Services.Identity
@@ -18,5 +19,6 @@ namespace Application.Services.Identity
 		Task<IResponseWrapper> ChangeUserStatusAsync(ChangeUserStatusRequest request);
 		Task<IResponseWrapper> GetRoleAsync(string userId);
 		Task<IResponseWrapper> UpdateUserRoleAsync(UpdateUserRolesRequest request);
+		Task<IResponseWrapper<UserResponse>> GetUserByEmailAsync(string email);
 	}
 }

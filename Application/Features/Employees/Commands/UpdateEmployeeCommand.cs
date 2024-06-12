@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Application.Pipelines;
 using Application.Services;
 using AutoMapper;
 using Common.Requests.Employees;
@@ -12,7 +13,7 @@ using MediatR;
 
 namespace Application.Features.Employees.Commands
 {
-    public class UpdateEmployeeCommand : IRequest<IResponseWrapper>
+    public class UpdateEmployeeCommand : IRequest<IResponseWrapper>, IValidateMe
     {
         public UpdateEmployeeRequest UpdateEmployeeRequest { get; set; } 
     }
